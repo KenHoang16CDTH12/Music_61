@@ -22,7 +22,6 @@ import com.sun.music61.util.helpers.OnScrollPagination;
 import com.sun.music61.util.listener.ItemRecyclerOnClickListener;
 import dmax.dialog.SpotsDialog;
 import java.util.List;
-import java.util.Objects;
 import ss.com.bannerslider.Slider;
 
 import static com.google.common.base.Preconditions.checkNotNull;
@@ -50,9 +49,7 @@ public class AllSongsFragment extends Fragment implements AllSongsContract.View,
             Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.all_songs_fragment, container, false);
         initView(rootView);
-        mPresenter = new AllSongPresenter(
-                RepositoryInstance.getInstanceTrackRepository(Objects.requireNonNull(getContext())),
-                this);
+        mPresenter = new AllSongPresenter(RepositoryInstance.getInstanceTrackRepository(), this);
         onListenerEvent();
         return rootView;
     }

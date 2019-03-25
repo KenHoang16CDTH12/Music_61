@@ -1,6 +1,5 @@
 package com.sun.music61.data.source.local;
 
-import android.content.Context;
 import android.database.Cursor;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,12 +14,12 @@ public class TracksLocalDataSource implements TracksDataSource.LocalDataSource {
     @NonNull
     private Function<Cursor, Track> mTrackMapperFunction;
 
-    private TracksLocalDataSource(@NonNull Context context) {
+    private TracksLocalDataSource() {
     }
 
-    public static TracksLocalDataSource getInstance(@NonNull Context context) {
+    public static TracksLocalDataSource getInstance() {
         if (sInstance == null) {
-            sInstance = new TracksLocalDataSource(context);
+            sInstance = new TracksLocalDataSource();
         }
         return sInstance;
     }

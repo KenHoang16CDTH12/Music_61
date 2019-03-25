@@ -9,10 +9,10 @@ import com.sun.music61.data.source.repository.TracksRepository;
 
 public class RepositoryInstance {
 
-    public static TracksRepository getInstanceTrackRepository(@NonNull Context context) {
+    public static TracksRepository getInstanceTrackRepository() {
         return TracksRepository.getInstance(
                 TracksRemoteDataSource.getInstance(),
-                TracksLocalDataSource.getInstance(context)
+                TracksLocalDataSource.getInstance()
         );
     }
 }
