@@ -48,6 +48,8 @@ dependencies {
     implementation "com.github.d-max:spots-dialog:$rootProject.ext.spotsdialog"
     // Circle Image
     implementation "de.hdodenhof:circleimageview:$rootProject.ext.circleimageview"
+    // Circular SeekBar
+    implementation "me.tankery.lib:circularSeekBar:$rootProject.ext.circularseekbar"
     // Image material design + Animation Image
     implementation "com.flaviofaria:kenburnsview:$rootProject.ext.kenburnsview"
     implementation "com.github.florent37:diagonallayout:$rootProject.ext.diagonallayout"

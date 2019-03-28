@@ -1,4 +1,4 @@
-package com.sun.music61.screen.splash;
+package com.sun.music61.screen;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -8,6 +8,7 @@ import android.view.WindowManager;
 import com.sun.music61.R;
 import com.sun.music61.screen.MainActivity;
 
+import com.sun.music61.screen.service.PlayTrackService;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class SplashActivity extends AppCompatActivity {
@@ -24,6 +25,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.splash_activity);
+        startService(PlayTrackService.getIntent(this));
         autoSwitchHomeActivity();
     }
 

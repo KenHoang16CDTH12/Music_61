@@ -26,4 +26,19 @@
         <item name="android:alpha">0.6</item>
         <item name="android:textColor">@android:color/white</item>
     </style>
+    <!-- Toolbar -->
+    <style name="ToolbarStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">?attr/actionBarSize</item>
+        <item name="android:background">?attr/colorPrimary</item>
+    </style>
+    <!--Custom Fragment-->
+    <style name="CustomDialogFragment" parent="Theme.Design.Light.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/ModalBottomSheet</item>
+    </style>
+    <style name="ModalBottomSheet" parent="Widget.Design.BottomSheet.Modal">
+        <item name="android:background">@drawable/background_modal</item>
+        <item name="android:minHeight">@dimen/dp_200</item>
+        <item name="android:maxHeight">@dimen/dp_500</item>
+    </style>
 </resources>

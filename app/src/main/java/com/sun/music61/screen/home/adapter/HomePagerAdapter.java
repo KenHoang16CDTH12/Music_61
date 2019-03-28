@@ -12,14 +12,15 @@ import static com.sun.music61.util.CommonUtils.TitleFragment;
 
 public class HomePagerAdapter extends FragmentPagerAdapter {
 
-    private static final int NUM_PAGE = 5;
+    private static final int NUM_PAGE = 6;
 
     private interface Page {
         int ALL_SONG = 0;
-        int ALTERNATIVE_ROCK = 1;
-        int AMBIENT = 2;
-        int CLASSICAL = 3;
-        int COUNTRY = 4;
+        int ALL_AUDIO = 1;
+        int ALTERNATIVE_ROCK = 2;
+        int AMBIENT = 3;
+        int CLASSICAL = 4;
+        int COUNTRY = 5;
     }
 
     public HomePagerAdapter(FragmentManager fm) {
@@ -31,6 +32,8 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
         switch (position) {
             case Page.ALL_SONG:
                 return AllSongsFragment.newInstance();
+            case Page.ALL_AUDIO:
+                return GenresFragment.newInstance(Genres.ALL_AUDIO);
             case Page.ALTERNATIVE_ROCK:
                 return GenresFragment.newInstance(Genres.ALTERNATIVE_ROCK);
             case Page.AMBIENT:
@@ -55,6 +58,8 @@ public class HomePagerAdapter extends FragmentPagerAdapter {
         switch (position) {
             case Page.ALL_SONG:
                 return TitleFragment.ALL;
+            case Page.ALL_AUDIO:
+                return TitleFragment.AUDIO;
             case Page.ALTERNATIVE_ROCK:
                 return TitleFragment.ALTERNATIVE_ROCK;
             case Page.AMBIENT:

@@ -4,5 +4,5 @@ import android.graphics.Bitmap;
 
 public interface FetchImageCallBack {
     void onCompleted(Bitmap bitmap);
-    void onError(Exception ex);
+    void onFailure();
 }

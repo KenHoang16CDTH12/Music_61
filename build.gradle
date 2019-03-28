@@ -28,7 +28,6 @@ task clean(type: Delete) {
 
 // Define versions in a single place
 ext {
-
     // Sdk and tools
     minSdkVersion = 18
     targetSdkVersion = 28
@@ -49,5 +48,5 @@ ext {
     kenburnsview = '1.0.7'
     diagonallayout = '1.0.9'
     coverflow = '1.0'
-
+    circularseekbar = '1.1.4'
 }

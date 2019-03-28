@@ -1,10 +1,13 @@
 package com.sun.music61.screen.home.adapter;
 
+import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 import com.sun.music61.R;
@@ -71,6 +74,7 @@ public class TrackAdapter extends RecyclerView.Adapter<TrackAdapter.ViewHolder> 
         private ImageView mImageSong;
         private TextView mTextSong;
         private TextView mTextAuthor;
+        private ImageView mButtonPlay;
         private ItemRecyclerOnClickListener mListener;
 
         private ViewHolder(@NonNull View itemView, ItemRecyclerOnClickListener listener) {
@@ -79,11 +83,17 @@ public class TrackAdapter extends RecyclerView.Adapter<TrackAdapter.ViewHolder> 
             mImageSong = itemView.findViewById(R.id.imageSong);
             mTextSong = itemView.findViewById(R.id.textSong);
             mTextAuthor = itemView.findViewById(R.id.textAuthor);
+            mButtonPlay = itemView.findViewById(R.id.buttonPlay);
             itemView.setOnClickListener(this);
         }
 
         private void bindData(Track track) {
             mTrack = track;
+            // Set up animation
+            loadAnimation(mImageSong, R.anim.fade_transition_animation);
+            loadAnimation(mTextSong, R.anim.fade_scale_animation);
+            loadAnimation(mTextAuthor, R.anim.fade_scale_animation);
+            loadAnimation(mButtonPlay, R.anim.fade_scale_animation);
             if (CommonUtils.checkNotNull(track.getArtworkUrl())) {
                 CommonUtils.loadImageFromUrl(mImageSong, track.getArtworkUrl(), CommonUtils.T300);
             } else {
@@ -91,6 +101,10 @@ public class TrackAdapter extends RecyclerView.Adapter<TrackAdapter.ViewHolder> 
             }
             mTextSong.setText(track.getTitle());
             mTextAuthor.setText(track.getUser().getUsername());
+        }
+
+        private void loadAnimation(View view, int resource) {
+            view.setAnimation(AnimationUtils.loadAnimation(itemView.getContext(), resource));
         }
 
         @Override

@@ -34,7 +34,7 @@ public class ImageFactory extends AsyncTask<Void, Void, Bitmap> {
         if (result != null) {
             mCallBack.onCompleted(result);
         } else {
-            mCallBack.onError(new NullPointerException());
+            mCallBack.onFailure();
         }
     }
 

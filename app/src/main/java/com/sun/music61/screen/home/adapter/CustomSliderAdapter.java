@@ -19,6 +19,10 @@ public class CustomSliderAdapter extends SliderAdapter {
         return mBanners != null ? mBanners.size() : 0;
     }
 
+    public Track getBanner(int position) {
+        return mBanners.get(position);
+    }
+
     @Override
     public void onBindImageSlide(int position, ImageSlideViewHolder imageSlideViewHolder) {
         if (mBanners.get(position).getArtworkUrl() != null) {

@@ -11,7 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".screen.splash.SplashActivity"
+        <service
+            android:name=".screen.service.PlayTrackService"
+            android:enabled="true"
+            android:exported="true"/>
+        <activity
+            android:name=".screen.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
